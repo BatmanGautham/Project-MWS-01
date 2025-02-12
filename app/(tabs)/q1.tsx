@@ -8,6 +8,8 @@ import { database } from '../firebase/firebase';
 import MatchPair1 from '../../components/MatchPair1';
 import ResultCard from '../../components/ResultCardq1'; 
 
+import LearningSlides from '../../components/LearningSlides';
+
 interface QuizOption {
   id: string;
   label: string;
@@ -34,7 +36,9 @@ const QuizScreen = () => {
   const [backgroundColor, setBackgroundColor] = useState('rgb(15, 0, 25)'); // State for background color
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null); // Track if the answer is correct
   const [isCheckDisabled, setIsCheckDisabled] = useState(false); // Disable Check button after use
-  
+
+  const [isLearningCompleted, setIsLearningCompleted] = useState(false);
+
   const questions: QuizQuestion[] = [
     {
       id: '1',
@@ -89,6 +93,51 @@ const QuizScreen = () => {
   ];
   const currentQuestion = questions[currentQuestionIndex];
 
+
+
+  const learningSlides: LearningSlide[] = [
+    {
+      id: '1',
+      image: require('../../assets/images/roadMapImgs/women.jpg'),
+      frenchWord: 'la femme',
+      englishWord: 'woman',
+    },
+    {
+      id: '2',
+      image: require('../../assets/images/roadMapImgs/bird.png'),
+      frenchWord: "l'oiseau",
+      englishWord: 'bird',
+    },
+    {
+      id: '3',
+      image: require('../../assets/images/roadMapImgs/grape.jpg'),
+      frenchWord: 'le raisin',
+      englishWord: 'grape',
+    },
+    {
+      id: '4',
+      image: require('../../assets/images/roadMapImgs/rabbit.jpg'),
+      frenchWord: 'le lapin',
+      englishWord: 'rabbit',
+    },
+    {
+      id: '5',
+      image: require('../../assets/images/roadMapImgs/banana.jpg'),
+      frenchWord: 'la banane',
+      englishWord: 'banana',
+    },
+  ];
+
+  const handleLearningComplete = () => {
+    setIsLearningCompleted(true); // Mark learning as completed
+  };
+
+  if (!isLearningCompleted) {
+    return <LearningSlides slides={learningSlides} onComplete={handleLearningComplete} />;
+  }
+
+
+     
   const handleCheck = async () => {
     if (!selectedOption) return;
 
@@ -157,6 +206,7 @@ const QuizScreen = () => {
             [{ 
               text: 'Restart', 
               onPress: () => {
+                setIsLearningCompleted(false); 
                 setHearts(5);
                 setSelectedOption(null);
               }
@@ -165,7 +215,6 @@ const QuizScreen = () => {
         }
       }
 
-      // Revert background color after 1 second
       setTimeout(() => {
         setBackgroundColor('rgb(15, 0, 25)');
         setIsCheckDisabled(false); // Re-enable the Check button
@@ -210,6 +259,8 @@ const QuizScreen = () => {
     if (currentQuestion.type === 'match') {
       return <MatchPair1 onComplete={handleNextQuestion} />;
     }
+  
+    
 
     return (
       <>
@@ -242,13 +293,14 @@ const QuizScreen = () => {
     );
   };
 
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
       {showResultCard ? (
         <ResultCard
           correctAnswers={correctAnswers}
           totalQuestions={questions.length}
-          onRestart={handleRestart}
+          onRestart={handleRestart}          
         />
       ) : (
         <>

@@ -115,7 +115,15 @@ interface FactItemProps {
 const FactItem = forwardRef<React.ElementRef<typeof TouchableOpacity>, FactItemProps>(
   ({ fact, onPress }, ref) => {
     return (
+
+    // <SafeAreaView style={styles.container}>
+    //   <View style={styles.header}>
+    //   <Text style={styles.newWordText}>NEW WORD</Text>
+    //   </View>
+
       <TouchableOpacity ref={ref} onPress={onPress} style={styles.container}>
+        
+
         <Image source={ImageFiles[fact.image as keyof typeof ImageFiles]} style={styles.image} />
         <View style={styles.textContainer}>
           <Text style={styles.text}>{fact.text}</Text>
@@ -136,6 +144,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     boxShadow: '0px 2px 3.84px rgba(0, 0, 0, 0.25)',
   },
+
   image: {
     width: 80,
     height: 80,

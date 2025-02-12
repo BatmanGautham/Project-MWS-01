@@ -47,7 +47,6 @@ const ChapterProgressScreen = () => {
   const [overallProgress, setOverallProgress] = useState(1);
   const [unlockedLessons, setUnlockedLessons] = useState(['1', '2']); // Initially first two lessons unlocked
   
-  // Add useEffect to check quiz completion status
   useEffect(() => {
     const checkQuizStatus = async () => {
       const auth = getAuth();
@@ -88,16 +87,16 @@ const ChapterProgressScreen = () => {
       },
       {
         id: '2',
-        title: 'First Quiz',
+        title: 'Lets Talk now!',
         type: 'speaking',
-        image: require('../../assets/images/FLE web.jpg'),
+        image: require('../../assets/images/conversation2.png'),
         isCompleted: false,
         isLocked: !unlockedLessons.includes('2'),
         route: '/(tabs)/q1' as const
       },
       {
         id: '3',
-        title: 'Next Lesson',
+        title: 'Next Adventure',
         type: 'ai',
         image: require('../../assets/images/food.jpeg'),
         isCompleted: false,
@@ -131,7 +130,10 @@ const ChapterProgressScreen = () => {
   const renderLesson = (lesson: Lesson, index: number) => {
     return (
       <View key={lesson.id} style={styles.lessonContainer}>
-        <View style={styles.lessonLine} />
+
+        <View style={styles.lessonLine} /> 
+
+
         <TouchableOpacity
           style={[
             styles.lessonButton,
@@ -192,7 +194,7 @@ const ChapterProgressScreen = () => {
         </View>
         <View style={styles.premiumContent}>
           <Text style={styles.premiumTitle}>
-            Make learning easier with 70% off Premium
+            Make learning easier with Our Ryla Ai Tutor
           </Text>
         </View>
       </TouchableOpacity>
@@ -226,12 +228,17 @@ const ChapterProgressScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(15, 0, 25)',
   },
   header: {
-    fontSize: 28,
+    fontSize: 38,
     fontWeight: 'bold',
-    padding: 16,
+    padding: 20,
+    paddingTop: 40,
+    color: 'white', 
+    textShadowColor: 'rgba(240, 101, 122, 0.8)',
+    textShadowOffset: { width: 0, height: 0 }, 
+    textShadowRadius: 6,
   },
   progressBar: {
     height: 8,
@@ -276,6 +283,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 4,
+    color: '#fff',
   },
   chapterProgress: {
     fontSize: 16,
@@ -290,7 +298,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   lessonLine: {
-    width: 2,
+    width: 5,
     height: '100%',
     backgroundColor: '#E5E7EB',
     position: 'absolute',
@@ -298,9 +306,9 @@ const styles = StyleSheet.create({
     top: 30,
   },
   lessonButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 150,
+    height: 100,
+    borderRadius: 80,
     backgroundColor: '#fff',
     borderWidth: 2,
     borderColor: '#E5E7EB',
@@ -365,6 +373,10 @@ const styles = StyleSheet.create({
   lessonTitle: {
     fontSize: 16,
     fontWeight: '600',
+    color: 'white', 
+    textShadowColor: 'rgba(240, 101, 122, 0.8)',
+    textShadowOffset: { width: 1, height: 2 }, 
+    textShadowRadius: 10,
   },
   checkpointContainer: {
     backgroundColor: '#FFF9E6',

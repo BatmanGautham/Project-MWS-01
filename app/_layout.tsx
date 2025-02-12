@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-export const unstable_settings = {
-  initialRouteName: '(tabs)',
-};
+// export const unstable_settings = {
+//   initialRouteName: '(tabs)',
+// };
 
 SplashScreen.preventAutoHideAsync();
 

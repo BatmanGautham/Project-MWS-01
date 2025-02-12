@@ -13,6 +13,10 @@ import { useRouter } from 'expo-router';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 
+
+import { useBackHandler } from '../../hooks/useBackHandler'; // Adjust the path based on your structure
+
+
 const { width } = Dimensions.get('window');
 
 const VideoLessonScreen = () => {

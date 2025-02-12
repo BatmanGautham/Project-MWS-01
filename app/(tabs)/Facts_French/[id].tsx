@@ -54,10 +54,17 @@ export default function FactDetailScreen() {
         isMuted
         // style={styles.video}
       />
+
       <Animated.View style={[styles.content, { opacity: fadeAnim }]}>
         <TouchableOpacity onPress={goBack} style={styles.backButton}>
           <FontAwesome name="arrow-left" size={30} color="rgba(0, 255, 38, 0.93)" />
         </TouchableOpacity>
+
+        <Text style={styles.newWordText}>New Word</Text>
+
+        <View style={styles.mainContent}>
+
+
         <Image source={ImageFiles[fact.image as keyof typeof ImageFiles]} style={styles.image} />
         <TouchableOpacity onPress={toggleLanguage}>
           <LinearGradient
@@ -77,6 +84,7 @@ export default function FactDetailScreen() {
             <FontAwesome name={isFavorite ? "star" : "star-o"} size={28} color="gold" />
           </TouchableOpacity>
         </View>
+        </View>
       </Animated.View>
     </View>
   );
@@ -90,9 +98,28 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: 20,
   },
+
+  mainContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+newWordText: {
+  paddingTop: 60, // Increased to avoid overlap with back button
+  marginBottom: 20, // Add space between heading and image
+  color: 'rgba(127, 17, 224, 1)',
+  fontSize: 16,
+  fontWeight: 'bold',
+  width: '100%', // Add this to ensure full width
+  textAlign: 'center', // Add this to center the text
+},
+
+
+
   backButton: {
     position: 'absolute',
     top: 40,
