@@ -2,11 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { StyleSheet, FlatList, View, Animated } from 'react-native';
 import { Link, useFocusEffect } from 'expo-router';
 import { Video,ResizeMode } from 'expo-av'; // Import Video component
-import { FACTS } from '../../constants/Facts';
+import { FACTS } from '../../../constants/Facts';
 import FactItem from '@/components/FactItem';
 // import FactItem from '../../components/FactItem';
 
-import { Fact } from '../../types/index';
+import { Fact } from '../../../types/index';
 
 export default function TabOneScreen() {
   const [facts, setFacts] = useState<Fact[]>([]);
@@ -45,7 +45,7 @@ export default function TabOneScreen() {
         ],
       }}
     >
-      <Link href={`../Facts_French/${item.id}`} asChild>
+      <Link href={`../Frn/Facts_French/${item.id}`} asChild>
         <FactItem fact={item} onPress={() => {}} />
       </Link>
     </Animated.View>

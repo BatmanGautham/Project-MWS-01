@@ -11,7 +11,7 @@ import SpeakScreen from '../../components/screens/SpeakScreen';
 import ReviewScreen from '../../components/screens/ReviewScreen';
 import ProfileScreen from '../../components/screens/ProfileScreen';
 // import HoneScreen from './Home';
-import HomeScreen from './Home1';
+import HomeScreen from './Frn/Home1';
 
 const Tab = createBottomTabNavigator();
 

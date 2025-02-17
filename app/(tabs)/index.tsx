@@ -5,7 +5,7 @@ import {StyleSheet,View,Text,TextInput,TouchableOpacity,Image,Dimensions,Animate
 from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
-import HomeScreen from './Home';
+import HomeScreen from './Frn/Home';
 
 import { Video } from 'expo-av';
 import { ResizeMode } from 'expo-av';
@@ -162,17 +162,17 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
       // User exists, check if they completed onboarding
       if (userData.quizResults?.isAssessmentComplete) {
         // User has completed onboarding, go to home
-        router.replace('./home');
+        router.replace('./Frn/home');
       } else if (userData.currentStep) {
         // User was in the middle of onboarding, resume from their last step
         router.replace(`./${userData.currentStep}`);
       } else {
         // User hasn't started onboarding
-        router.replace('./qn1');
+        router.replace('./Frn/qn1');
       }
     } else {
       // New user, start onboarding
-      router.replace('./qn1');
+      router.replace('./Frn/qn1');
     }
   };
 
@@ -188,7 +188,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
         if (isLogin) {
           const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
           const user = userCredential.user;
-          router.replace('/(tabs)/Home1');
+          router.replace('/(tabs)/Frn/Home1');
         } else {
           const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password);
           const user = userCredential.user;

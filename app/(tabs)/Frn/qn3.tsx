@@ -167,7 +167,7 @@ const ModelSettingsScreen = () => {
         style={styles.nextButton}
         onPress={async () => {
           await saveModelData(modelData);
-          router.replace('/(tabs)/quiz');
+          router.replace('/Frn/quiz');
         }}
       >
         <Text style={styles.nextButtonText}>Save Goals and proceed to the Quiz</Text>

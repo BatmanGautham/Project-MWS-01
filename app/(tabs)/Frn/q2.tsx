@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/Feather';
 import { useRouter } from 'expo-router';
 import { getDatabase, ref, update, get } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
-import { database } from '../firebase/firebase';
-import MatchPair1 from '../../components/MatchPair1';
-import ResultCard from '../../components/ResultCardq1'; 
+import { database } from '../../firebase/firebase';
+import MatchPair1 from '../../../components/MatchPair1';
+import ResultCard from '../../../components/ResultCardq1'; 
 
 interface QuizOption {
   id: string;
@@ -22,7 +22,7 @@ interface QuizQuestion {
   type?: 'match';
 }
 
-const QuizScreen = () => {
+const QuizTwoScreen = () => {
   const router = useRouter();
   const [hearts, setHearts] = useState(5);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -34,51 +34,50 @@ const QuizScreen = () => {
   const [backgroundColor, setBackgroundColor] = useState('rgb(15, 0, 25)'); // State for background color
   const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean | null>(null); // Track if the answer is correct
   const [isCheckDisabled, setIsCheckDisabled] = useState(false); // Disable Check button after use
-  
   const questions: QuizQuestion[] = [
     {
       id: '1',
-      question: 'Which one means "la femme" in English?',
+      question: 'Which one means "le garçon" in English?',
       options: [
-        { id: '1', label: 'woman', image: require('../../assets/images/roadMapImgs/women.jpg'), isCorrect: true },
-        { id: '2', label: 'boy', image: require('../../assets/images/roadMapImgs/boy.jpg'), isCorrect: false },
-        { id: '3', label: 'man', image: require('../../assets/images/roadMapImgs/man.jpg'), isCorrect: false },
+        { id: '1', label: 'woman', image: require('../../../assets/images/roadMapImgs/women.jpg'), isCorrect: false },
+        { id: '2', label: 'boy', image: require('../../../assets/images/roadMapImgs/boy.jpg'), isCorrect: true },
+        { id: '3', label: 'man', image: require('../../../assets/images/roadMapImgs/man.jpg'), isCorrect: false },
       ],
     },
     {
       id: '2',
-      question: 'Which one means "l\'oiseau" in English?',
+      question: 'Which one means "la fille" in English?',
       options: [
-        { id: '1', label: 'dog', image: require('../../assets/images/roadMapImgs/dog.jpg'), isCorrect: false },
-        { id: '2', label: 'bird', image: require('../../assets/images/roadMapImgs/bird.png'), isCorrect: true },
-        { id: '3', label: 'cat', image: require('../../assets/images/roadMapImgs/Cat.jpg'), isCorrect: false },
+        { id: '1', label: 'woman', image: require('../../../assets/images/roadMapImgs/women.jpg'), isCorrect: false },
+        { id: '2', label: 'girl', image: require('../../../assets/images/roadMapImgs/girl.jpg'), isCorrect: true },
+        { id: '3', label: 'man', image: require('../../../assets/images/roadMapImgs/man.jpg'), isCorrect: false },
       ],
     },
     {
       id: '3',
-      question: 'Which one means "le raisin" in English?',
+      question: 'Which one means "le chat" in English?',
       options: [
-        { id: '1', label: 'banana', image: require('../../assets/images/roadMapImgs/banana.jpg'), isCorrect: false },
-        { id: '2', label: 'grape', image: require('../../assets/images/roadMapImgs/grape.jpg'), isCorrect: true },
-        { id: '3', label: 'apple', image: require('../../assets/images/roadMapImgs/apple.jpg'), isCorrect: false },
+        { id: '1', label: 'dog', image: require('../../../assets/images/roadMapImgs/dog.jpg'), isCorrect: false },
+        { id: '2', label: 'cat', image: require('../../../assets/images/roadMapImgs/Cat.jpg'), isCorrect: true },
+        { id: '3', label: 'bird', image: require('../../../assets/images/roadMapImgs/bird.png'), isCorrect: false },
       ],
     },
     {
       id: '4',
-      question: 'Which one means "le lapin" in English?',
+      question: 'Which one means "la pomme" in English?',
       options: [
-        { id: '1', label: 'rabbit', image: require('../../assets/images/roadMapImgs/rabbit.jpg'), isCorrect: true },
-        { id: '2', label: 'dog', image: require('../../assets/images/roadMapImgs/dog.jpg'), isCorrect: false },
-        { id: '3', label: 'fish', image: require('../../assets/images/roadMapImgs/fish.jpg'), isCorrect: false },
+        { id: '1', label: 'banana', image: require('../../../assets/images/roadMapImgs/banana.jpg'), isCorrect: false },
+        { id: '2', label: 'apple', image: require('../../../assets/images/roadMapImgs/apple.jpg'), isCorrect: true },
+        { id: '3', label: 'grape', image: require('../../../assets/images/roadMapImgs/grape.jpg'), isCorrect: false },
       ],
     },
     {
       id: '5',
-      question: 'Which one means "la banane" in English?',
+      question: 'Which one means "le chien" in English?',
       options: [
-        { id: '1', label: 'banana', image: require('../../assets/images/roadMapImgs/banana.jpg'), isCorrect: true },
-        { id: '2', label: 'apple', image: require('../../assets/images/roadMapImgs/apple.jpg'), isCorrect: false },
-        { id: '3', label: 'grape', image: require('../../assets/images/roadMapImgs/grape.jpg'), isCorrect: false },
+        { id: '1', label: 'rabbit', image: require('../../../assets/images/roadMapImgs/rabbit.jpg'), isCorrect: false },
+        { id: '2', label: 'dog', image: require('../../../assets/images/roadMapImgs/dog.jpg'), isCorrect: true },
+        { id: '3', label: 'fish', image: require('../../../assets/images/roadMapImgs/fish.jpg'), isCorrect: false },
       ],
     },
     {
@@ -87,6 +86,7 @@ const QuizScreen = () => {
       question: 'Match the Following',
     },
   ];
+
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleCheck = async () => {
@@ -199,7 +199,7 @@ const QuizScreen = () => {
   };
 
   const handleSkip = () => {
-    router.push('/(tabs)/Home' as const);
+    router.push('/Frn/Home' as const);
   };
 
   const handleClose = () => {
@@ -325,7 +325,6 @@ const QuizScreen = () => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -487,6 +486,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  
+
   nextButtonDisabled: {
     paddingVertical: 18,
     paddingHorizontal: 16,
@@ -539,6 +540,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  errorText: {
+    color: '#ff4b4b',
+    textAlign: 'center',
+    marginVertical: 10,
+  }
+
 });
 
-export default QuizScreen;
+export default QuizTwoScreen;

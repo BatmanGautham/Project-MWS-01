@@ -294,7 +294,7 @@ const CrosswordScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <ImageBackground
-        source={require('../../assets/images/back.jpg')}
+        source={require('../../../assets/images/back.jpg')}
         style={styles.background}
       >
         <View style={styles.content}>

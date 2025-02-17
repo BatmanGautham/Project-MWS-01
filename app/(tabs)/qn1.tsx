@@ -92,7 +92,7 @@ const GoalSelectionScreen = () => {
         <TouchableOpacity 
           style={styles.nextButton}
           onPress={() => {
-            router.replace('/qn2');
+            router.replace('/Frn/qn2');
           }}
         >
           <Text style={styles.nextButtonText}>Next Question</Text>

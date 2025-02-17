@@ -23,7 +23,7 @@ const scenarios: Scenario[] = [
   {
     id: '1',
     heading: 'SCENARIO :  You and your Friends are in a restaurant waiting to order, and the waiter comes by.',
-    image: require('../../assets/images/waiter.png'),
+    image: require('../../../assets/images/waiter.png'),
     question: 'Good evening, everyone! How may I assist you today?',
     options: [
       { id: 'r1', text: 'Good morning. What’s the time now?', correct: false, audio: 'r1' },
@@ -34,7 +34,7 @@ const scenarios: Scenario[] = [
   {
     id: '2',
     heading: 'SCENARIO :  The waiter hands you the menu and is ready to take your order.',
-    image: require('../../assets/images/waiter.png'),
+    image: require('../../../assets/images/waiter.png'),
     question: 'Here’s the menu. May I take your order?',
     options: [
       { id: 'rr1', text: 'No, thank you. The weather is nice.', correct: false, audio: 'r5' },
@@ -45,7 +45,7 @@ const scenarios: Scenario[] = [
   {
     id: '3',
     heading: 'SCENARIO :  The waiter informs you about the salad ingredients.',
-    image: require('../../assets/images/waiter.png'),
+    image: require('../../../assets/images/waiter.png'),
     question: 'The salad includes onions. Would you like them removed?',
     options: [
       { id: 'rrr1', text: 'Yes, that’s fine. Thank you for asking.', correct: true, audio: 'r7' },
@@ -56,7 +56,7 @@ const scenarios: Scenario[] = [
   {
     id: '4',
     heading: 'SCENARIO :  The waiter asks if you need anything else.',
-    image: require('../../assets/images/waiter.png'),
+    image: require('../../../assets/images/waiter.png'),
     question: 'Is there anything else I can bring you?',
     options: [
       { id: 'rrrr1', text: 'I like tables.', correct: false, audio: 'r12' },
@@ -69,7 +69,7 @@ const scenarios: Scenario[] = [
   {
     id: '5',
     heading: 'SCENARIO :  The waiter asks if you’d like to pay the bill.',
-    image: require('../../assets/images/waiter.png'),
+    image: require('../../../assets/images/waiter.png'),
     question: 'Would you like the bill now?',
     options: [
       { id: 'rrrrr1', text: 'Yes, please. Thank you for your service', correct: true, audio: 'r13' },
@@ -80,31 +80,31 @@ const scenarios: Scenario[] = [
 ];
 
 const audioFiles: Record<string, any> = {
-  r1: require('../../assets/audio/r1.mp3'),
-  r2: require('../../assets/audio/r2.mp3'),
-  r3: require('../../assets/audio/r3.mp3'),
+  r1: require('../../../assets/audio/r1.mp3'),
+  r2: require('../../../assets/audio/r2.mp3'),
+  r3: require('../../../assets/audio/r3.mp3'),
 
-  r4: require('../../assets/audio/r4.mp3'),
-  r5: require('../../assets/audio/r5.mp3'),
-  r6: require('../../assets/audio/r6.mp3'),
+  r4: require('../../../assets/audio/r4.mp3'),
+  r5: require('../../../assets/audio/r5.mp3'),
+  r6: require('../../../assets/audio/r6.mp3'),
 
-  r7: require('../../assets/audio/r7.mp3'),
-  r8: require('../../assets/audio/r8.mp3'),
-  r9: require('../../assets/audio/r9.mp3'),
+  r7: require('../../../assets/audio/r7.mp3'),
+  r8: require('../../../assets/audio/r8.mp3'),
+  r9: require('../../../assets/audio/r9.mp3'),
 
-  r10: require('../../assets/audio/r10.mp3'),
-  r11: require('../../assets/audio/r11.mp3'),
-  r12: require('../../assets/audio/r12.mp3'),
+  r10: require('../../../assets/audio/r10.mp3'),
+  r11: require('../../../assets/audio/r11.mp3'),
+  r12: require('../../../assets/audio/r12.mp3'),
 
-  r13: require('../../assets/audio/r13.mp3'),
-  r14: require('../../assets/audio/r14.mp3'),
-  r15: require('../../assets/audio/r15.mp3'),
+  r13: require('../../../assets/audio/r13.mp3'),
+  r14: require('../../../assets/audio/r14.mp3'),
+  r15: require('../../../assets/audio/r15.mp3'),
 
-  q1: require('../../assets/audio/q1.mp3'),
-  q2: require('../../assets/audio/q2.mp3'),
-  q3: require('../../assets/audio/q3.mp3'),
-  q4: require('../../assets/audio/q4.mp3'),
-  q5: require('../../assets/audio/q5.mp3'),
+  q1: require('../../../assets/audio/q1.mp3'),
+  q2: require('../../../assets/audio/q2.mp3'),
+  q3: require('../../../assets/audio/q3.mp3'),
+  q4: require('../../../assets/audio/q4.mp3'),
+  q5: require('../../../assets/audio/q5.mp3'),
   // Add other audio files as needed
 };
 

@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScreen from './app/(tabs)/Home';
+import HomeScreen from './app/(tabs)/Frn/Home';
 import AuthScreen from './app/(tabs)/index';
 import TabNavigator from './app/(tabs)/TabNavigator';
 

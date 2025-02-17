@@ -12,7 +12,11 @@ import Flag from 'react-native-flags';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref as dbRef, update } from 'firebase/database';
 
-type RouteType = '/(tabs)/English' | '/(tabs)/German' | '/(tabs)/Spanish';
+type RouteType = 
+  | '/(tabs)/English' 
+  | '/(tabs)/German' 
+  | '/Frn/Spanish'
+  | '/Frn/French';
 
 interface LanguageOption {
   id: string;
@@ -66,7 +70,7 @@ const qn2 = () => {
       try {
         let nextRoute: RouteType = '/(tabs)/English'; 
         if (selectedLanguage === '2') nextRoute = '/(tabs)/German';
-        if (selectedLanguage === '3') nextRoute = '/(tabs)/Spanish';
+        if (selectedLanguage === '3') nextRoute = '/Frn/Spanish';
 
         await update(userRef, {
           currentStep: 'quiz',

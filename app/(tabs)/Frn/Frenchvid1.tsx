@@ -62,7 +62,7 @@ const VideoLessonScreen = () => {
       {/* Close Button */}
       <TouchableOpacity 
         style={styles.closeButton}
-        onPress={() => router.replace('./Home')}
+        onPress={() => router.replace('./Frn/Home')}
       >
         <Icon name="x" size={24} color="#1a1a1a" />
       </TouchableOpacity>
@@ -74,7 +74,7 @@ const VideoLessonScreen = () => {
         <View style={styles.videoContainer}>
           <Video
             ref={videoRef}
-            source={require('../../assets/videos/French_L01.mp4')}
+            source={require('../../../assets/videos/French_L01.mp4')}
             style={styles.video}
             useNativeControls
             resizeMode={ResizeMode.CONTAIN}

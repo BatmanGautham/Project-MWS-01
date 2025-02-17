@@ -35,12 +35,12 @@ const LearnScreen = () => {
               style={styles.lessonItem}
               onPress={() => {
                 if (lesson.name === 'Learn with AI') {
-                  router.push('/(tabs)/Learnwithai');
+                  router.push('/Frn/Learnwithai');
                 } else if (lesson.name === 'Games') {
-                  router.push('/(tabs)/Crossword');
+                  router.push('/Frn/Crossword');
                 }
                 else if (lesson.name === 'Facts') {
-                  router.push('/(tabs)/Fact_Index');
+                  router.push('/Frn/Fact_Index');
                 }
                 else if (lesson.name === 'Videos') {
                   router.push('/(tabs)/Learnvid');

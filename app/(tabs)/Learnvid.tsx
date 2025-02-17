@@ -49,7 +49,7 @@ const LearnVideoScreen = () => {
         <View style={styles.lessonList}>
           <TouchableOpacity 
             style={styles.lessonItem}
-            onPress={() => router.replace('./Frenchvid1')}
+            onPress={() => router.replace('./Frn/Frenchvid1')}
           >
             <View style={styles.lessonIcon}>
               <Icon name="play-circle" size={24} color="#0066FF" />

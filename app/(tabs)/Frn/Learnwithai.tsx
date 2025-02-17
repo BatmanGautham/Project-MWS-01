@@ -27,7 +27,7 @@ const conversationItems: ConversationItem[] = [
     id: '1',
     icon: '👋',
     title: 'Introduce yourself',
-    image: require('../../assets/images/back.jpg'),
+    image: require('../../../assets/images/back.jpg'),
     subtitle: 'Giving your name',
     level: 'A1 Beginner',
   },
@@ -35,7 +35,7 @@ const conversationItems: ConversationItem[] = [
     id: '2',
     icon: '💼',
     title: 'Talk about your job',
-    image: require('../../assets/images/firefighter.jpg'),
+    image: require('../../../assets/images/firefighter.jpg'),
     subtitle: 'Talking about your job',
     level: 'A1 Beginner',
   },
@@ -43,7 +43,7 @@ const conversationItems: ConversationItem[] = [
     id: '3',
     icon: '🍽️',
     title: 'Order food',
-    image: require('../../assets/images/food.jpeg'),
+    image: require('../../../assets/images/food.jpeg'),
     subtitle: 'Ordering food and drinks',
     level: 'A1 Beginner',
   },
@@ -51,7 +51,7 @@ const conversationItems: ConversationItem[] = [
     id: '4',
     icon: '🍷',
     title: 'Order food',
-    image: require('../../assets/images/restaurant1.jpg'),
+    image: require('../../../assets/images/restaurant1.jpg'),
     subtitle: 'Ordering at a restaurant',
     level: 'C1 Advanced',
   },
@@ -61,7 +61,7 @@ const LearnWithAIScreen = () => {
   useFocusEffect(
     React.useCallback(() => {
       const onBackPress = () => {
-        router.replace('/(tabs)');
+        router.replace('/Frn/Home1');
         return true;
       };
 
@@ -94,7 +94,7 @@ const LearnWithAIScreen = () => {
             onPress={() => {
               if (item.id === '3') {
                 // router.replace('/(tabs)/Learnwithaifood');
-                router.push('/(tabs)/Learnwithaifood');
+                router.push('/Frn/Learnwithaifood');
 
               } else {
                 // Handle other navigation

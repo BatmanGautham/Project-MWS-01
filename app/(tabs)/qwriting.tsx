@@ -228,7 +228,7 @@ const WritingAssessmentScreen = () => {
 
           <TouchableOpacity
             style={styles.continueButton}
-            onPress={() => router.replace("./welcome")}
+            onPress={() => router.replace("./Frn/welcome")}
           >
             <Text style={styles.continueButtonText}>Submit</Text>
           </TouchableOpacity>

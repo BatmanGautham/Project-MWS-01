@@ -14,7 +14,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ correctAnswers, totalQuestions,
   const router = useRouter();
 
   const handleGoBack = () => {
-    router.push('/(tabs)/Home' as const);
+    router.push('/Frn/Home' as const);
   };
 
   return (

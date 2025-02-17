@@ -12,12 +12,12 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
-import TabNavigator from './TabNavigator';
+import TabNavigator from '../TabNavigator';
 import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { getAuth } from 'firebase/auth';
 import { ref, onValue, update, get } from 'firebase/database';
 import { Video, ResizeMode } from 'expo-av';
-import { database } from '../firebase/firebase';
+import { database } from '../../firebase/firebase';
 
 const { width } = Dimensions.get('window');
 
@@ -182,7 +182,7 @@ const HomeScreen: React.FC = () => {
         router.replace('/(tabs)/completion' as any);
       } else {
         // No progress, start from first question
-        router.replace('/(tabs)/q1' as any);
+        router.replace('/Frn/q1' as any);
       }
     } catch (error) {
       console.error('Error checking progress:', error);
@@ -365,12 +365,12 @@ const HomeScreen: React.FC = () => {
       
       switch(level) {
         case 1:
-          if (!completedQuestions.q1) router.replace('./q1');
-          else if (!completedQuestions.q2) router.replace('./q2');
+          if (!completedQuestions.q1) router.replace('./Frn/q1');
+          else if (!completedQuestions.q2) router.replace('./Frn/q2');
           break;
         case 2:
-          if (!completedQuestions.star2q1) router.replace('./star2q1');
-          else if (!completedQuestions.star2q2) router.replace('./star2q2');
+          if (!completedQuestions.star2q1) router.replace('./Frn/star2q1');
+          else if (!completedQuestions.star2q2) router.replace('./Frn/star2q2');
           break;
         default:
           onPress();
@@ -455,7 +455,7 @@ const HomeScreen: React.FC = () => {
 
       <TouchableOpacity 
         style={styles.switchButton}
-        onPress={() => router.replace('/(tabs)/Home1')}
+        onPress={() => router.replace('/Frn/Home1')}
       >
         <Text style={styles.switchButtonText}>Back To Home</Text>
       </TouchableOpacity>
@@ -488,12 +488,12 @@ const HomeScreen: React.FC = () => {
           <View style={styles.learningPath}>
             <TouchableOpacity 
               style={styles.startButton} 
-              onPress={() => router.replace('/(tabs)/q1' as any)}
+              onPress={() => router.replace('/Frn/q1' as any)}
             >
               <Text style={styles.startButtonText}>START</Text>
             </TouchableOpacity>
 
-            {renderPathNode(1, "star", () => router.replace('/(tabs)/q1' as any))}
+            {renderPathNode(1, "star", () => router.replace('/Frn/q1' as any))}
             <View style={styles.pathLine} />
             
             <Animated.View style={[
@@ -501,7 +501,7 @@ const HomeScreen: React.FC = () => {
               showUnlockAnimation && { transform: [{ scale: unlockScale }] }
             ]}>
               <TouchableOpacity 
-                onPress={() => router.replace('/(tabs)/star2q1' as any)}
+                onPress={() => router.replace('/Frn/star2q1' as any)}
                 disabled={!userData?.unlockedStars || userData.unlockedStars < 2}
               >
                 <MaterialCommunityIcons 
@@ -513,7 +513,7 @@ const HomeScreen: React.FC = () => {
             </Animated.View>
             <View style={styles.pathLine} />
             
-            {renderPathNode(3, "star", () => router.replace(`/(tabs)/q3` as any))}
+            {renderPathNode(3, "star", () => router.replace(`/Frn/q3` as any))}
             <View style={styles.pathLine} />
             
             {renderPathNode(4, "treasure-chest", () => router.replace(`/(tabs)/bonus` as any))}

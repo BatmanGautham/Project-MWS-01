@@ -14,15 +14,18 @@ import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref, get } from 'firebase/database';
-import SpeechPractice from '../../components/SpeechPractice';
+import SpeechPractice from '../../../components/SpeechPractice';
 
 const { width } = Dimensions.get('window');
 
 type ValidRoute = 
-  | '/(tabs)/Home' 
-  | '/(tabs)/q1' 
-  | '/(tabs)/q2' 
-  | '/(tabs)/q3';
+  | '/Frn/Home' 
+  | '/Frn/q1' 
+  | '/Frn/q2' 
+  | '/Frn/q3'
+  | '/Frn/q1'
+  | '/Frn/q2'
+  | '/Frn/welcome';
 
 interface Lesson {
   id: string;
@@ -85,26 +88,26 @@ const Home1Screen = () => {
         id: '1',
         title: 'Learn the Basics',
         type: 'regular',
-        image: require('../../assets/images/FLE web.jpg'),
+        image: require('../../../assets/images/FLE web.jpg'),
         isCompleted: true,
         isLocked: false,
-        route: '/(tabs)/Home' as const
+        route: '/Frn/Home' as const
       },
       {
         id: '2',
         title: 'First Quiz',
         type: 'speaking',
-        image: require('../../assets/images/qn.jpg'),
+        image: require('../../../assets/images/qn.jpg'),
         isCompleted: false,
         isLocked: !unlockedLessons.includes('2'),
-        route: '/(tabs)/q1' as const,
+        route: '/Frn/q1' as const,
         speechPractice: true
       },
       {
         id: '3',
         title: 'Next Lesson',
         type: 'ai',
-        image: require('../../assets/images/speaklrn.png'),
+        image: require('../../../assets/images/speaklrn.png'),
         isCompleted: false,
         isLocked: !unlockedLessons.includes('3'),
       },

@@ -109,7 +109,7 @@ const LanguageProficiencyScreen = () => {
             initialLevel: proficiencyLevels.find(l => l.id === selectedLevel)?.level
           }
         });
-        router.replace('/(tabs)/qn3');
+        router.replace('/Frn/qn3');
       } catch (error) {
         console.error('Error updating progress:', error);
       }
@@ -120,7 +120,7 @@ const LanguageProficiencyScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../../assets/Gif/lightgif.gif')}
+          source={require('../../../assets/Gif/lightgif.gif')}
           style={styles.mascot}
         />
         <View style={styles.questionBubble}>
