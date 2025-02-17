@@ -10,6 +10,12 @@ import ResultCard from '../../components/ResultCardq1';
 
 import LearningSlides from '../../components/LearningSlides';
 
+
+
+
+
+
+
 interface QuizOption {
   id: string;
   label: string;
@@ -292,6 +298,8 @@ const QuizScreen = () => {
       </>
     );
   };
+
+
 
 
   return (

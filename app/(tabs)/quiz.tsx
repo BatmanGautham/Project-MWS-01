@@ -23,7 +23,7 @@ interface QuizQuestion {
 const questions: Record<string, QuizQuestion[]> = {
   beginner: [
     { 
-      question: "Hier, nous ................ un film intéressant.", 
+      question: "Fill in the Correct Word: Hier, nous ................ un film intéressant.", 
       options: ["regardons", "avons regardé", "regardions", "Don't Know"], 
       answer: "avons regardé",
       context: "Past tense usage" 
@@ -49,19 +49,19 @@ const questions: Record<string, QuizQuestion[]> = {
       answer: "Rouge" 
     },
     { 
-      question: "J'aime ................... chocolat.", 
+      question: "Fill in the Correct Word: J'aime ................... chocolat.", 
       options: ["le", "la", "les", "Don't Know"], 
       answer: "le" 
     },
   ],
   intermediate: [
     { 
-      question: "J'aime beaucoup ................ étudiant. Il est très sympathique.", 
+      question: "Fill in the Correct Word: J'aime beaucoup ................ étudiant. Il est très sympathique.", 
       options: ["cette", "ce", "cet", "Don't Know"], 
       answer: "cet" 
     },
     { 
-      question: "Nous ................ au cinéma demain.", 
+      question: "Fill in the Correct Word: Nous ................ au cinéma demain.", 
       options: ["allons", "allez", "va", "Don't Know"], 
       answer: "allons" 
     },
@@ -71,7 +71,7 @@ const questions: Record<string, QuizQuestion[]> = {
       answer: "I would like a coffee, please." 
     },
     { 
-      question: "Elle parle ................ son professeur.", 
+      question: "Fill in the Correct Word: Elle parle ................ son professeur.", 
       options: ["à", "avec", "de", "Don't Know"], 
       answer: "à" 
     },
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     margin: 30,
-    marginBottom:50,
+    marginBottom:5,
     textAlign: 'center',
   },
   question: {
