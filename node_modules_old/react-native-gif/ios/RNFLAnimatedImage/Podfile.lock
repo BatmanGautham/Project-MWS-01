@@ -1,0 +1,21 @@
+PODS:
+  - FLAnimatedImage (1.0.14)
+
+DEPENDENCIES:
+  - FLAnimatedImage (from `https://github.com/Flipboard/FLAnimatedImage`)
+
+EXTERNAL SOURCES:
+  FLAnimatedImage:
+    :git: https://github.com/Flipboard/FLAnimatedImage
+
+CHECKOUT OPTIONS:
+  FLAnimatedImage:
+    :commit: 612910aa78268029bc883cfd3c7e36dd2a1a6215
+    :git: https://github.com/Flipboard/FLAnimatedImage
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 58084d75cec819869a5ee8c76463df798dbaa906
+
+PODFILE CHECKSUM: 6b702951a7bad1ceb86d1044690c18904b801f88
+
+COCOAPODS: 1.8.4
