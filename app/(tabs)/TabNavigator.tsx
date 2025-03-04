@@ -13,6 +13,9 @@ import ProfileScreen from '../../components/screens/ProfileScreen';
 // import HoneScreen from './Home';
 import HomeScreen from './Home1';
 
+ 
+
+
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {

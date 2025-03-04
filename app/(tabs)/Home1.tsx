@@ -94,7 +94,7 @@ const Home1Screen = () => {
         id: '2',
         title: 'First Quiz',
         type: 'speaking',
-        image: require('../../assets/images/qn.jpg'),
+        image: require('../../assets/images/conversation4.png'),
         isCompleted: false,
         isLocked: !unlockedLessons.includes('2'),
         route: '/(tabs)/q1' as const,
@@ -202,7 +202,7 @@ const Home1Screen = () => {
         </View>
         <View style={styles.premiumContent}>
           <Text style={styles.premiumTitle}>
-            Make learning easier with 70% off Premium
+          Make your learning easier with Ryla Ai Tutor
           </Text>
         </View>
       </TouchableOpacity>
@@ -241,12 +241,17 @@ const Home1Screen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgb(15, 0, 25)',
   },
   header: {
-    fontSize: 28,
+    fontSize: 38,
     fontWeight: 'bold',
-    padding: 16,
+    padding: 20,
+    paddingTop: 40,
+    color: 'white', 
+    textShadowColor: 'rgba(240, 101, 122, 0.8)',
+    textShadowOffset: { width: 1, height: 0 }, 
+    textShadowRadius: 6,
   },
   progressBar: {
     height: 8,
@@ -291,6 +296,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 4,
+    color: '#fff',
   },
   chapterProgress: {
     fontSize: 16,
@@ -300,12 +306,14 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   lessonContainer: {
+    paddingLeft: 25,
+
     flexDirection: 'row',
     marginBottom: 24,
     alignItems: 'center',
   },
   lessonLine: {
-    width: 2,
+    width: 5,
     height: '100%',
     backgroundColor: '#E5E7EB',
     position: 'absolute',
@@ -313,9 +321,9 @@ const styles = StyleSheet.create({
     top: 30,
   },
   lessonButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 150,
+    height: 100,
+    borderRadius: 80,
     backgroundColor: '#fff',
     borderWidth: 2,
     borderColor: '#E5E7EB',
@@ -380,6 +388,10 @@ const styles = StyleSheet.create({
   lessonTitle: {
     fontSize: 16,
     fontWeight: '600',
+    color: 'white', 
+    textShadowColor: 'rgba(240, 101, 122, 0.89)',
+    textShadowOffset: { width: 10, height: 9 }, 
+    textShadowRadius: 50,
   },
   checkpointContainer: {
     backgroundColor: '#FFF9E6',
@@ -393,7 +405,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(31, 3, 7, 0.89)',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,

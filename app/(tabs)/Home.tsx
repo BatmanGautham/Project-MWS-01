@@ -560,6 +560,277 @@ const HomeScreen: React.FC = () => {
   );
 };
 
+
+
+
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#0A0F24', // Dark blue background for a modern look
+//   },
+//   backgroundVideo: {
+//     position: 'absolute',
+//     top: 0,
+//     left: 0,
+//     bottom: 0,
+//     right: 0,
+//     zIndex: -1,
+//     width: width,
+//     opacity: 0.8, // Slightly transparent for better readability
+//   },
+//   header: {
+//     backgroundColor: '#1A1F36', // Darker header background
+//     padding: 20,
+//     borderBottomLeftRadius: 20,
+//     borderBottomRightRadius: 20,
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.3,
+//     shadowRadius: 8,
+//     elevation: 8,
+//   },
+//   headerContent: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//   },
+//   headerTextContainer: {
+//     flex: 1,
+//     marginLeft: 16,
+//   },
+//   welcomeText: {
+//     color: '#FFFFFF',
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     textShadowColor: 'rgba(0, 0, 0, 0.2)',
+//     textShadowOffset: { width: 1, height: 1 },
+//     textShadowRadius: 2,
+//   },
+//   quizResultsContainer: {
+//     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+//     padding: 16,
+//     marginTop: 12,
+//     borderRadius: 12,
+//     borderWidth: 1,
+//     borderColor: 'rgba(255, 255, 255, 0.1)',
+//   },
+//   levelText: {
+//     color: '#FFFFFF',
+//     fontSize: 18,
+//     fontWeight: 'bold',
+//   },
+//   accuracyText: {
+//     color: '#58CC02', // Green for accuracy
+//     fontSize: 16,
+//     marginTop: 4,
+//   },
+//   motivationalText: {
+//     color: '#FFFFFF',
+//     fontSize: 14,
+//     fontStyle: 'italic',
+//     marginTop: 8,
+//     opacity: 0.9,
+//   },
+//   switchButton: {
+//     backgroundColor: '#FF6B6B', // Red for contrast
+//     paddingHorizontal: 16,
+//     paddingVertical: 8,
+//     borderRadius: 20,
+//     alignSelf: 'flex-end',
+//     marginRight: 20,
+//     marginTop: -20,
+//     shadowColor: '#FF6B6B',
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.3,
+//     shadowRadius: 8,
+//     elevation: 5,
+//   },
+//   switchButtonText: {
+//     color: '#FFFFFF',
+//     fontSize: 14,
+//     fontWeight: 'bold',
+//   },
+//   quizResultsCard: {
+//     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+//     margin: 16,
+//     padding: 16,
+//     borderRadius: 12,
+//     borderWidth: 1,
+//     borderColor: 'rgba(255, 255, 255, 0.2)',
+//   },
+//   resultTitle: {
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//     color: '#FFFFFF',
+//     marginBottom: 12,
+//   },
+//   resultRow: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     marginVertical: 4,
+//   },
+//   resultLabel: {
+//     fontSize: 16,
+//     color: '#FFFFFF',
+//     opacity: 0.8,
+//   },
+//   resultValue: {
+//     fontSize: 18,
+//     fontWeight: 'bold',
+//     color: '#58CC02', // Green for positive results
+//   },
+//   scrollView: {
+//     flex: 1,
+//   },
+//   content: {
+//     padding: 16,
+//   },
+//   learningPath: {
+//     alignItems: 'center',
+//     marginBottom: 24,
+//   },
+//   startButton: {
+//     backgroundColor: '#FF6B6B', // Red for the start button
+//     paddingHorizontal: 24,
+//     paddingVertical: 12,
+//     borderRadius: 18,
+//     marginBottom: 16,
+//     shadowColor: '#FF6B6B',
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.3,
+//     shadowRadius: 8,
+//     elevation: 5,
+//   },
+//   startButtonText: {
+//     color: '#FFFFFF',
+//     fontWeight: 'bold',
+//     fontSize: 16,
+//   },
+//   pathNode: {
+//     width: 74,
+//     height: 74,
+//     borderRadius: 42,
+//     backgroundColor: '#2B3940', // Darker node background
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     position: 'relative',
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 3 },
+//     shadowOpacity: 0.25,
+//     shadowRadius: 4,
+//     elevation: 5,
+//   },
+//   unlockedNode: {
+//     backgroundColor: '#1F2937', // Slightly lighter for unlocked nodes
+//     borderWidth: 2,
+//     borderColor: '#58CC02', // Green border for unlocked nodes
+//   },
+//   pathLine: {
+//     width: 3,
+//     height: 40,
+//     backgroundColor: '#2B3940', // Darker line color
+//   },
+//   lockIconContainer: {
+//     position: 'absolute',
+//     top: -8,
+//     right: -8,
+//     backgroundColor: '#1F2937',
+//     borderRadius: 12,
+//     padding: 4,
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 2 },
+//     shadowOpacity: 0.25,
+//     shadowRadius: 4,
+//     elevation: 5,
+//   },
+//   cardsContainer: {
+//     gap: 16,
+//   },
+//   card: {
+//     backgroundColor: '#1F2937', // Darker card background
+//     paddingHorizontal: 24,
+//     paddingVertical: 12,
+//     borderRadius: 18,
+//     marginBottom: 16,
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.25,
+//     shadowRadius: 8,
+//     elevation: 6,
+//   },
+//   cardHeader: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     padding: 16,
+//   },
+//   cardTitle: {
+//     color: '#FF6B6B', // Red for card titles
+//     fontSize: 16,
+//     fontWeight: 'bold',
+//   },
+//   cardContent: {
+//     overflow: 'hidden',
+//   },
+//   cardText: {
+//     color: '#9CA3AF', // Light gray for card text
+//     padding: 16,
+//     paddingTop: 0,
+//   },
+//   questItem: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     padding: 16,
+//     paddingTop: 0,
+//     gap: 12,
+//   },
+//   questContent: {
+//     flex: 1,
+//   },
+//   questText: {
+//     color: '#FFFFFF',
+//     marginBottom: 4,
+//   },
+//   questProgress: {
+//     color: '#9CA3AF',
+//     fontSize: 12,
+//   },
+//   progressBar: {
+//     height: 8,
+//     backgroundColor: '#2B3940', // Darker progress bar background
+//     borderRadius: 4,
+//   },
+//   progressFill: {
+//     height: '100%',
+//     backgroundColor: '#FF6B6B', // Red for progress fill
+//     borderRadius: 4,
+//   },
+//   viewAllButton: {
+//     padding: 16,
+//     paddingTop: 0,
+//   },
+//   viewAllText: {
+//     color: '#1CB0F6', // Blue for view all text
+//     fontWeight: 'bold',
+//   },
+//   star: {
+//     width: 64,
+//     height: 64,
+//     borderRadius: 32,
+//     backgroundColor: '#2B3940', // Darker star background
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     position: 'relative',
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 3 },
+//     shadowOpacity: 0.25,
+//     shadowRadius: 4,
+//     elevation: 5,
+//   },
+// });
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

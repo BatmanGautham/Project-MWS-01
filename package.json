@@ -38,7 +38,7 @@
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "expo-system-ui": "~2.4.0",
-    "expo-video": "~2.0.2",
+    "expo-video": "~2.0.5",
     "expo-web-browser": "~12.3.2",
     "firebase": "^11.2.0",
     "metro": "^0.81.0",

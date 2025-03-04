@@ -37,7 +37,7 @@ const LearnScreen = () => {
                 if (lesson.name === 'Learn with AI') {
                   router.push('/(tabs)/Learnwithai');
                 } else if (lesson.name === 'Games') {
-                  router.push('/(tabs)/Crossword');
+                  router.push('/(tabs)/GameList');
                 }
                 else if (lesson.name === 'Facts') {
                   router.push('/(tabs)/Fact_Index');

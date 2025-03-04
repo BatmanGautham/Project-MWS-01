@@ -3,6 +3,12 @@ import { useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Slot } from 'expo-router';
+
+
+
 export const unstable_settings = {
   initialRouteName: '(tabs)',
 };
@@ -10,6 +16,10 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+
+
+
+
   const [fontsLoaded] = useFonts({
     // Add your fonts here if needed
   });
