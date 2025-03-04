@@ -286,7 +286,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
 
         if (userData?.quizResults?.completedAt) {
           // User has completed the quiz before
-          router.replace('/(tabs)/Home');
+          router.replace('./Home');
         } else {
           // User hasn't taken the quiz yet
           router.replace('/(tabs)/qn1');
