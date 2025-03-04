@@ -3,7 +3,7 @@ import { StyleSheet, FlatList, View, Animated } from 'react-native';
 import { Link, useFocusEffect } from 'expo-router';
 import { Video,ResizeMode } from 'expo-av'; // Import Video component
 import { FACTS } from '../../../constants/Facts';
-import FactItem from '@/components/FactItem';
+import FactItem from '../../../components/FactItem';
 // import FactItem from '../../components/FactItem';
 
 import { Fact } from '../../../types/index';

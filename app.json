@@ -7,6 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "ryla",
     "userInterfaceStyle": "automatic",
+    "entryPoint": "node_modules/expo-router/entry.js",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -16,7 +17,9 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSMicrophoneUsageDescription": "This app needs access to the microphone to record your speech",
-        "NSSpeechRecognitionUsageDescription": "This app needs access to speech recognition to transcribe your speech"
+        "NSSpeechRecognitionUsageDescription": "This app needs access to speech recognition for text-to-speech functionality",
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to access your photos.",
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
       }
     },
     "android": {
@@ -25,7 +28,11 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": [
-        "RECORD_AUDIO"
+        "RECORD_AUDIO",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ],
       "package": "com.anonymous.RylaV0"
     },
@@ -37,13 +44,20 @@
     "plugins": [
       "@react-native-voice/voice",
       "expo-font",
-      "expo-video",
       [
         "expo-av",
         {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
         }
-      ]
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      "expo-router"
     ],
     "experiments": {
       "typedRoutes": true,

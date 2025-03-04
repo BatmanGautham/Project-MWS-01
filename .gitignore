@@ -29,3 +29,6 @@ expo-env.d.ts
 package-lock.json
 package.json
 Ryla/Firebase_connection.json
+
+app/config/env.ts
+app/config/firebase.ts

@@ -12,6 +12,7 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { getAuth } from 'firebase/auth';
 import { getDatabase, ref, set, get } from 'firebase/database';
+import { initializeApp } from 'firebase/app';
 
 interface ClueType {
   number: number;
@@ -98,6 +99,15 @@ const clues: ClueType[] = [
   }
 ];
 
+// Initialize Firebase at the top of your file
+const firebaseConfig = {
+  // Your Firebase config here
+  // apiKey, authDomain, etc.
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 const CrosswordScreen = () => {
   const [selectedClue, setSelectedClue] = useState<ClueType | null>(null);
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
@@ -110,7 +120,6 @@ const CrosswordScreen = () => {
   }, []);
 
   const loadUserProgress = async () => {
-    const auth = getAuth();
     const user = auth.currentUser;
     
     if (user) {
@@ -131,7 +140,6 @@ const CrosswordScreen = () => {
   };
 
   const saveProgress = async () => {
-    const auth = getAuth();
     const user = auth.currentUser;
     
     if (user) {
