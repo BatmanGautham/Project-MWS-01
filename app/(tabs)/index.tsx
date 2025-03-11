@@ -17,9 +17,6 @@ import { app, auth, database } from '../firebase/firebase';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { ref as dbRef, set, update, get } from 'firebase/database';
 
-
-
-
 const COLORS = {
   primary: '#F0657A', 
   secondary: '#674EA7', 
@@ -162,17 +159,17 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
       // User exists, check if they completed onboarding
       if (userData.quizResults?.isAssessmentComplete) {
         // User has completed onboarding, go to home
-        router.replace('./home');
+        router.push('./home');
       } else if (userData.currentStep) {
         // User was in the middle of onboarding, resume from their last step
-        router.replace(`./${userData.currentStep}`);
+        router.push(`./${userData.currentStep}`);
       } else {
         // User hasn't started onboarding
-        router.replace('./qn1');
+        router.push('./qn1');
       }
     } else {
       // New user, start onboarding
-      router.replace('./qn1');
+      router.push('./qn1');
     }
   };
 
@@ -181,14 +178,18 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
       try {
         // Check for admin credentials
         if (email === 'admin@gmail.com' && password === 'admin123') {
-          router.replace('../admin/dashboard');
+          router.push('../admin/dashboard');
+          // router.replace('../admin/dashboard');
+
           return;
         }
 
         if (isLogin) {
           const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
           const user = userCredential.user;
-          router.replace('/(tabs)/Home1');
+          // router.replace('/(tabs)/Home1');
+          router.push('/(tabs)/TabNavigator');
+
         } else {
           const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password);
           const user = userCredential.user;
@@ -201,7 +202,7 @@ const AuthScreen: React.FC<AuthScreenProps> = ({ onLogin }) => {
             lastLogin: new Date().toISOString()
           });
           
-          router.replace('/(tabs)/qn1');
+          router.push('/(tabs)/qn1');
         }
       } catch (error: any) {
         console.error('Auth error:', error);
@@ -430,7 +431,7 @@ const styles = StyleSheet.create({
   },
   backgroundVideo: {
     position: 'absolute',
-    top: 0,
+    top: 50,
     left: 0,
     bottom: 0,
     right: 0,

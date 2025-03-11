@@ -1,29 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Platform, BackHandler } from 'react-native';
+import { View, StyleSheet, Platform, BackHandler } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
-
+import { useRouter } from 'expo-router';
 // Import your screens
 import LearnScreen from '../../components/screens/LearnScreen';
 import CommunityScreen from '../../components/screens/CommunityScreen';
 import SpeakScreen from '../../components/screens/SpeakScreen';
 import ReviewScreen from '../../components/screens/ReviewScreen';
 import ProfileScreen from '../../components/screens/ProfileScreen';
-// import HoneScreen from './Home';
 import HomeScreen from './Home1';
-
- 
-
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+  const router = useRouter();
+
   useFocusEffect(
     React.useCallback(() => {
       const onBackPress = () => {
-        BackHandler.exitApp();  // Exit app when on main navigation
-        return true;
+        router.back(); // Navigate back on back button press
+        return true; // Return true to prevent default back behavior
       };
 
       BackHandler.addEventListener('hardwareBackPress', onBackPress);
@@ -45,36 +43,28 @@ const TabNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="globe" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Feather name="globe" size={24} color={color} />,
         }}
       />
       <Tab.Screen
         name="Learn"
         component={LearnScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="users" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Feather name="users" size={24} color={color} />,
         }}
       />
       <Tab.Screen
         name="Speak"
         component={SpeakScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="message-circle" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Feather name="message-circle" size={24} color={color} />,
         }}
       />
       <Tab.Screen
         name="Review"
         component={ReviewScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="trending-up" size={24} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Feather name="trending-up" size={24} color={color} />,
         }}
       />
       <Tab.Screen
@@ -82,12 +72,7 @@ const TabNavigator = () => {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View style={[styles.profileIcon, focused && styles.profileIconActive]}>
-              {/* <Image
-                source={require('../assets/profile-placeholder.jpg')}
-                style={styles.profileImage}
-              /> */}
-            </View>
+            <View style={[styles.profileIcon, focused && styles.profileIconActive]}></View>
           ),
         }}
       />

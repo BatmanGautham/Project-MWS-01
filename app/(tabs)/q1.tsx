@@ -198,9 +198,9 @@ const QuizScreen = () => {
     setShowNextButton(false); // Hide the Next button on restart
   };
 
-  const handleSkip = () => {
-    router.push('/(tabs)/Home' as const);
-  };
+  // const handleSkip = () => {
+  //   router.push('/(tabs)/Home' as const);
+  // };
 
   const handleClose = () => {
     router.back();

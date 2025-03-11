@@ -9,6 +9,7 @@ def chatbot():
     model = BlenderbotForConditionalGeneration.from_pretrained(model_name)
 
     print("Model processing complete and loaded successfully!")
+    
     print("Chatbot is ready. Type 'exit' to quit.")
     
     #Conversation Lopp
