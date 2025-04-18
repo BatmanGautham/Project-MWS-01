@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   },
   chartText: {
     fontSize: 16,
-    color: '#1A1A1AA', // Lighter text for placeholder
+    color: '#1A1A1a', // Lighter text for placeholder
   },
 });
 
